@@ -25,8 +25,4 @@ Use JavaScript to fetch and display images from the folder.
 
 Here’s the updated HTML and the JavaScript to include:
 
-AIzaSyD8JkKOjlvfHNbHlQHbP-HqNSHaA9LWqTI
-
-folder id - 1-MasRfB0rHICWIL9IHey-TnuJyG_qLc7
-
-https://drive.google.com/drive/folders/1-MasRfB0rHICWIL9IHey-TnuJyG_qLc7?usp=drive_link
+https://github.com/manalilsupermarket/manalilsupermarket.github.io/blob/main/index.html

@@ -241,64 +241,49 @@
     <!-- Gallery Start -->
     <div class="container-fluid bg-gallery" id="gallery" style="padding: 120px 0; margin: 90px 0">
       <div class="section-title position-relative text-center" style="margin-bottom: 120px">
-          <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px">Gallery</h6>
-          <h1 class="font-secondary display-4 text-white">Our Photo Gallery</h1>
-          <i class="far fa-heart text-white"></i>
+        <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px">Gallery</h6>
+        <h1 class="font-secondary display-4 text-white">Our Photo Gallery</h1>
+        <i class="far fa-heart text-white"></i>
       </div>
-      <div class="owl-carousel gallery-carousel" id="gallery-carousel">
-          <!-- Images will be inserted here by JavaScript -->
+      <div class="owl-carousel gallery-carousel">
+        <div class="gallery-item">
+          <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="" />
+          <a href="img/gallery-1.jpg" data-lightbox="gallery">
+            <i class="fa fa-2x fa-plus text-white"></i>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <img class="img-fluid w-100" src="img/gallery-2.jpg" alt="" />
+          <a href="img/gallery-2.jpg" data-lightbox="gallery">
+            <i class="fa fa-2x fa-plus text-white"></i>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <img class="img-fluid w-100" src="img/gallery-3.jpg" alt="" />
+          <a href="img/gallery-3.jpg" data-lightbox="gallery">
+            <i class="fa fa-2x fa-plus text-white"></i>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <img class="img-fluid w-100" src="img/gallery-4.jpg" alt="" />
+          <a href="img/gallery-4.jpg" data-lightbox="gallery">
+            <i class="fa fa-2x fa-plus text-white"></i>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <img class="img-fluid w-100" src="img/gallery-5.jpg" alt="" />
+          <a href="img/gallery-5.jpg" data-lightbox="gallery">
+            <i class="fa fa-2x fa-plus text-white"></i>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <img class="img-fluid w-100" src="img/gallery-6.jpg" alt="" />
+          <a href="img/gallery-6.jpg" data-lightbox="gallery">
+            <i class="fa fa-2x fa-plus text-white"></i>
+          </a>
+        </div>
       </div>
-  </div>
-  
-  <script>
-      const folderId = '1-MasRfB0rHICWIL9IHey-TnuJyG_qLc7';
-      const apiKey = 'AIzaSyD8JkKOjlvfHNbHlQHbP-HqNSHaA9LWqTI';
-  
-      function fetchGoogleDriveFiles() {
-        fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType)`)
-            .then(response => response.json())
-            .then(data => {
-                const files = data.files.filter(file => file.mimeType.startsWith('image/'));
-                const galleryCarousel = document.getElementById('gallery-carousel');
-
-                files.forEach(file => {
-                    const fileId = file.id;
-                    const imgUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-                    galleryItem.innerHTML = `
-                        <img class="img-fluid w-100" src="${imgUrl}" alt="${file.name}" />
-                        <a href="${imgUrl}" data-lightbox="gallery">
-                            <i class="fa fa-2x fa-plus text-white"></i>
-                        </a>
-                    `;
-                    galleryCarousel.appendChild(galleryItem);
-                });
-
-                // Initialize the carousel (You need to include the Owl Carousel script)
-                $('.owl-carousel').owlCarousel({
-                    loop: true,
-                    margin: 10,
-                    nav: true,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        600: {
-                            items: 3
-                        },
-                        1000: {
-                            items: 5
-                        }
-                    }
-                });
-            })
-            .catch(error => console.error('Error fetching Google Drive files:', error));
-    }
-
-    document.addEventListener('DOMContentLoaded', fetchGoogleDriveFiles);
-  </script>
-  
+    </div>
     <!-- Gallery End -->
 
     <!-- Event Start -->
